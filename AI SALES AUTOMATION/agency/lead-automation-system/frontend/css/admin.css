@@ -1,0 +1,172 @@
+/* Admin Dashboard Styles */
+.display-4 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+/* Card styles */
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 1rem 1.25rem;
+}
+
+.card-header h5 {
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+/* Stat cards */
+.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger {
+    position: relative;
+}
+
+.bg-primary i, .bg-success i, .bg-info i, .bg-warning i, .bg-danger i {
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    transform: translateY(-50%);
+}
+
+/* Dashboard charts */
+canvas {
+    max-width: 100%;
+}
+
+/* Tables */
+.table th {
+    font-weight: 600;
+    border-top: none;
+    background-color: #f8f9fa;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    padding: 0.4em 0.6em;
+    border-radius: 0.25rem;
+}
+
+/* Progress bars */
+.progress {
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Activity list */
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+.list-group-item:first-child {
+    border-top: none;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+/* Content scheduler table */
+.content-schedule th, .content-schedule td {
+    white-space: nowrap;
+}
+
+/* Button styles */
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #ced4da;
+}
+
+.btn-outline-secondary:hover, .btn-outline-secondary:focus {
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #ced4da;
+}
+
+.btn-outline-secondary.active {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+/* Date range picker */
+.dropdown-menu {
+    padding: 0.5rem 0;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border: none;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1.5rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-divider {
+    margin: 0.5rem 0;
+}
+
+/* System health */
+.list-group-flush .list-group-item {
+    border-color: #e9ecef;
+}
+
+/* API usage chart */
+#api-usage-chart {
+    height: 240px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 1.75rem;
+    }
+
+    .row > div {
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+}

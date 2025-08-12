@@ -1,0 +1,95 @@
+2025-03-16 04:40:43,806 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-03-16 04:40:43,807 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-16 04:40:43,838 - werkzeug - INFO -  * Restarting with stat
+2025-03-16 04:40:45,228 - werkzeug - WARNING -  * Debugger is active!
+2025-03-16 04:40:45,276 - werkzeug - INFO -  * Debugger PIN: 372-451-236
+2025-03-16 04:40:49,115 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:40:49] "GET / HTTP/1.1" 200 -
+2025-03-16 04:40:49,216 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:40:49] "[33mGET /css/styles.css HTTP/1.1[0m" 404 -
+2025-03-16 04:40:49,232 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:40:49] "[33mGET /js/dashboard.js HTTP/1.1[0m" 404 -
+2025-03-16 04:40:49,305 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:40:49] "[33mGET /js/script.js HTTP/1.1[0m" 404 -
+2025-03-16 04:40:49,373 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:40:49] "[33mGET /js/lead-search.js HTTP/1.1[0m" 404 -
+2025-03-16 04:40:49,419 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:40:49] "[33mGET /js/lead-management.js HTTP/1.1[0m" 404 -
+2025-03-16 04:40:49,448 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:40:49] "[33mGET /js/email-outreach.js HTTP/1.1[0m" 404 -
+2025-03-16 04:40:49,455 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:40:49] "[33mGET /js/payments.js HTTP/1.1[0m" 404 -
+2025-03-16 04:40:49,461 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:40:49] "[33mGET /js/analytics.js HTTP/1.1[0m" 404 -
+2025-03-16 04:40:49,483 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:40:49] "[33mGET /js/settings.js HTTP/1.1[0m" 404 -
+2025-03-16 04:40:51,055 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:40:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-16 04:41:08,042 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:41:08] "GET / HTTP/1.1" 200 -
+2025-03-16 04:41:08,102 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:41:08] "[33mGET /css/styles.css HTTP/1.1[0m" 404 -
+2025-03-16 04:41:08,103 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:41:08] "[33mGET /js/script.js HTTP/1.1[0m" 404 -
+2025-03-16 04:41:08,106 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:41:08] "[33mGET /js/dashboard.js HTTP/1.1[0m" 404 -
+2025-03-16 04:41:08,110 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:41:08] "[33mGET /js/lead-search.js HTTP/1.1[0m" 404 -
+2025-03-16 04:41:08,128 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:41:08] "[33mGET /js/lead-management.js HTTP/1.1[0m" 404 -
+2025-03-16 04:41:08,131 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:41:08] "[33mGET /js/email-outreach.js HTTP/1.1[0m" 404 -
+2025-03-16 04:41:08,189 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:41:08] "[33mGET /js/payments.js HTTP/1.1[0m" 404 -
+2025-03-16 04:41:08,195 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:41:08] "[33mGET /js/analytics.js HTTP/1.1[0m" 404 -
+2025-03-16 04:41:08,199 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:41:08] "[33mGET /js/settings.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:09,068 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-03-16 04:46:09,068 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-16 04:46:09,069 - werkzeug - INFO -  * Restarting with stat
+2025-03-16 04:46:09,953 - werkzeug - WARNING -  * Debugger is active!
+2025-03-16 04:46:09,953 - werkzeug - INFO -  * Debugger PIN: 372-451-236
+2025-03-16 04:46:19,641 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:19] "GET / HTTP/1.1" 200 -
+2025-03-16 04:46:19,682 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:19] "[33mGET /css/styles.css HTTP/1.1[0m" 404 -
+2025-03-16 04:46:19,717 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:19] "[33mGET /js/dashboard.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:19,745 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:19] "[33mGET /js/script.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:19,752 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:19] "[33mGET /js/lead-search.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:19,780 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:19] "[33mGET /js/lead-management.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:19,822 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:19] "[33mGET /js/email-outreach.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:19,839 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:19] "[33mGET /js/payments.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:19,868 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:19] "[33mGET /js/analytics.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:19,893 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:19] "[33mGET /js/settings.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:30,162 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:30] "GET / HTTP/1.1" 200 -
+2025-03-16 04:46:30,202 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:30] "[33mGET /css/styles.css HTTP/1.1[0m" 404 -
+2025-03-16 04:46:30,211 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:30] "[33mGET /js/script.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:30,213 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:30] "[33mGET /js/dashboard.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:30,218 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:30] "[33mGET /js/lead-management.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:30,221 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:30] "[33mGET /js/lead-search.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:30,237 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:30] "[33mGET /js/email-outreach.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:30,247 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:30] "[33mGET /js/payments.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:30,252 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:30] "[33mGET /js/analytics.js HTTP/1.1[0m" 404 -
+2025-03-16 04:46:30,260 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:46:30] "[33mGET /js/settings.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:01,966 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-03-16 04:49:01,966 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-16 04:49:01,966 - werkzeug - INFO -  * Restarting with stat
+2025-03-16 04:49:02,931 - werkzeug - WARNING -  * Debugger is active!
+2025-03-16 04:49:02,931 - werkzeug - INFO -  * Debugger PIN: 372-451-236
+2025-03-16 04:49:08,298 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:08] "GET / HTTP/1.1" 200 -
+2025-03-16 04:49:08,390 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:08] "[33mGET /css/styles.css HTTP/1.1[0m" 404 -
+2025-03-16 04:49:08,430 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:08] "[33mGET /js/script.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:08,458 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:08] "[33mGET /js/dashboard.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:08,497 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:08] "[33mGET /js/lead-search.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:08,536 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:08] "[33mGET /js/lead-management.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:08,563 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:08] "[33mGET /js/email-outreach.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:08,571 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:08] "[33mGET /js/payments.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:08,575 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:08] "[33mGET /js/analytics.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:08,637 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:08] "[33mGET /js/settings.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:18,586 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:18] "GET / HTTP/1.1" 200 -
+2025-03-16 04:49:18,630 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:18] "[33mGET /css/styles.css HTTP/1.1[0m" 404 -
+2025-03-16 04:49:18,637 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:18] "[33mGET /js/dashboard.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:18,639 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:18] "[33mGET /js/script.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:18,645 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:18] "[33mGET /js/lead-search.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:18,656 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:18] "[33mGET /js/email-outreach.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:18,663 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:18] "[33mGET /js/lead-management.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:18,669 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:18] "[33mGET /js/payments.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:18,670 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:18] "[33mGET /js/analytics.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:18,679 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:18] "[33mGET /js/settings.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:26,379 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:26] "GET / HTTP/1.1" 200 -
+2025-03-16 04:49:26,430 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:26] "[33mGET /css/styles.css HTTP/1.1[0m" 404 -
+2025-03-16 04:49:26,434 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:26] "[33mGET /js/script.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:26,437 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:26] "[33mGET /js/email-outreach.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:26,444 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:26] "[33mGET /js/lead-management.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:26,447 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:26] "[33mGET /js/lead-search.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:26,452 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:26] "[33mGET /js/dashboard.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:26,462 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:26] "[33mGET /js/payments.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:26,476 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:26] "[33mGET /js/analytics.js HTTP/1.1[0m" 404 -
+2025-03-16 04:49:26,483 - werkzeug - INFO - 127.0.0.1 - - [16/Mar/2025 04:49:26] "[33mGET /js/settings.js HTTP/1.1[0m" 404 -

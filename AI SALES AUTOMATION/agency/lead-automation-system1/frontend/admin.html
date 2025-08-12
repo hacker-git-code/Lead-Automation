@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Lead Automation System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-robot"></i> Admin</h3>
+                <div class="small text-light">Lead Automation System</div>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" data-section="dashboard">
+                        <i class="fas fa-chart-line"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="users">
+                        <i class="fas fa-users"></i> User Management
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="leads">
+                        <i class="fas fa-address-book"></i> Lead Management
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="email-templates">
+                        <i class="fas fa-envelope-open-text"></i> Email Templates
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="payment-settings">
+                        <i class="fas fa-credit-card"></i> Payment Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="system">
+                        <i class="fas fa-server"></i> System
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-section="reports">
+                        <i class="fas fa-chart-pie"></i> Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="logout-link">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <div class="ms-auto d-flex align-items-center">
+                        <div class="dropdown">
+                            <button class="btn btn-link dropdown-toggle text-decoration-none" type="button" id="userMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user-circle me-1"></i>
+                                <span id="user-name">Admin</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenuDropdown">
+                                <li><a class="dropdown-item" href="#" id="profile-link"><i class="fas fa-id-card me-2"></i>Profile</a></li>
+                                <li><a class="dropdown-item" href="#" id="settings-link"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#" id="menu-logout-link"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Content sections -->
+            <div id="dashboard-section" class="content-section active">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Admin Dashboard</h2>
+                        <button class="btn btn-sm btn-outline-secondary" id="refresh-dashboard">
+                            <i class="fas fa-sync-alt"></i> Refresh Data
+                        </button>
+                    </div>
+
+                    <!-- System health overview -->
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="card border-left-primary h-100">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Users</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="total-users">0</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-left-success h-100">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Leads</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="total-leads">0</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-address-book fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-left-info h-100">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">System Status</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="system-status">Healthy</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-server fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-left-warning h-100">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Version</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="system-version">1.0.0</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-code-branch fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts row -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">User Registration</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="userRegistrationChart" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Lead Distribution</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="leadDistributionChart" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent activities and system logs -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Recent User Activities</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>User</th>
+                                                    <th>Action</th>
+                                                    <th>Time</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="recent-activities">
+                                                <tr>
+                                                    <td colspan="3" class="text-center">Loading activities...</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">System Logs</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Time</th>
+                                                    <th>Type</th>
+                                                    <th>Message</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="system-logs">
+                                                <tr>
+                                                    <td colspan="3" class="text-center">Loading logs...</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Management Section -->
+            <div id="users-section" class="content-section">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>User Management</h2>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                            <i class="fas fa-user-plus"></i> Add User
+                        </button>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover" id="users-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Last Login</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="6" class="text-center">Loading users...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Section -->
+            <div id="system-section" class="content-section">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>System Management</h2>
+                        <div>
+                            <button class="btn btn-outline-secondary me-2" id="restart-system-btn">
+                                <i class="fas fa-sync"></i> Restart Services
+                            </button>
+                            <button class="btn btn-primary" id="deploy-version-btn">
+                                <i class="fas fa-cloud-upload-alt"></i> Deploy New Version
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">System Information</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm">
+                                            <tr>
+                                                <th width="30%">Current Version:</th>
+                                                <td id="info-version">1.0.0</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Server Time:</th>
+                                                <td id="info-server-time">-</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Last Deployment:</th>
+                                                <td id="info-last-deployment">-</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Backend Status:</th>
+                                                <td id="info-backend-status"><span class="badge bg-success">Running</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Database Status:</th>
+                                                <td id="info-db-status"><span class="badge bg-success">Connected</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th>API Integrations:</th>
+                                                <td id="info-api-status">
+                                                    <div>Apollo: <span class="badge bg-success">Connected</span></div>
+                                                    <div>Stripe: <span class="badge bg-success">Connected</span></div>
+                                                    <div>Razorpay: <span class="badge bg-success">Connected</span></div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">Resource Usage</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label d-flex justify-content-between">
+                                            <span>CPU Usage</span>
+                                            <span id="cpu-usage-percent">23%</span>
+                                        </label>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 23%;" aria-valuenow="23" aria-valuemin="0" aria-valuemax="100" id="cpu-usage-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label d-flex justify-content-between">
+                                            <span>Memory Usage</span>
+                                            <span id="memory-usage-percent">45%</span>
+                                        </label>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" id="memory-usage-bar"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label d-flex justify-content-between">
+                                            <span>Disk Usage</span>
+                                            <span id="disk-usage-percent">38%</span>
+                                        </label>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 38%;" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" id="disk-usage-bar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card mt-4">
+                                <div class="card-header">
+                                    <h5 class="card-title">Quick Actions</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-outline-primary" id="backup-db-btn">
+                                            <i class="fas fa-database"></i> Backup Database
+                                        </button>
+                                        <button class="btn btn-outline-secondary" id="update-ssl-btn">
+                                            <i class="fas fa-lock"></i> Update SSL Certificate
+                                        </button>
+                                        <button class="btn btn-outline-info" id="view-logs-btn">
+                                            <i class="fas fa-file-alt"></i> View Detailed Logs
+                                        </button>
+                                        <button class="btn btn-outline-danger" id="purge-tmp-btn">
+                                            <i class="fas fa-trash"></i> Purge Temporary Files
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Deployment History</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Version</th>
+                                            <th>Date</th>
+                                            <th>Deployed By</th>
+                                            <th>Changes</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="deployment-history">
+                                        <tr>
+                                            <td>1.0.0</td>
+                                            <td>2023-05-20 14:32:15</td>
+                                            <td>admin@example.com</td>
+                                            <td>Initial deployment</td>
+                                            <td><span class="badge bg-success">Success</span></td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-secondary">
+                                                    <i class="fas fa-info-circle"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger">
+                                                    <i class="fas fa-undo"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other sections would be added via JavaScript -->
+            <div id="leads-section" class="content-section"></div>
+            <div id="email-templates-section" class="content-section"></div>
+            <div id="payment-settings-section" class="content-section"></div>
+            <div id="reports-section" class="content-section"></div>
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addUserModalLabel">Add New User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="add-user-form">
+                        <div class="mb-3">
+                            <label for="new-user-name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="new-user-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-user-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="new-user-email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-user-role" class="form-label">Role</label>
+                            <select class="form-select" id="new-user-role" required>
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-user-password" class="form-label">Temporary Password</label>
+                            <input type="password" class="form-control" id="new-user-password" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submit-new-user">Add User</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deploy Version Modal -->
+    <div class="modal fade" id="deployVersionModal" tabindex="-1" aria-labelledby="deployVersionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deployVersionModalLabel">Deploy New Version</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Deploying a new version will temporarily disrupt service. Make sure to inform users before proceeding.
+                    </div>
+                    <form id="deploy-version-form">
+                        <div class="mb-3">
+                            <label for="version-number" class="form-label">Version Number</label>
+                            <input type="text" class="form-control" id="version-number" placeholder="1.0.1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="version-notes" class="form-label">Release Notes</label>
+                            <textarea class="form-control" id="version-notes" rows="4" required></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="confirm-deployment" required>
+                            <label class="form-check-label" for="confirm-deployment">
+                                I understand that this will update the production system
+                            </label>
+                        </div>
+                    </form>
+                    <div id="deployment-status" style="display: none;">
+                        <h6 class="text-center mb-3">Deployment Progress</h6>
+                        <div class="progress mb-3">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" id="deployment-progress"></div>
+                        </div>
+                        <div class="deployment-log bg-dark text-light p-2" style="height: 150px; overflow-y: auto; font-family: monospace; font-size: 0.8rem;">
+                            <div id="deployment-log"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancel-deployment">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="start-deployment">Start Deployment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

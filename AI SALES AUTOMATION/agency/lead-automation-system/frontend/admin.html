@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Lead Automation System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" data-section="admin-dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#" data-section="user-management"><i class="fas fa-users-cog"></i> User Management</a>
+                </li>
+                <li>
+                    <a href="#" data-section="lead-overview"><i class="fas fa-funnel-dollar"></i> Lead Overview</a>
+                </li>
+                <li>
+                    <a href="#" data-section="email-templates"><i class="fas fa-envelope-open-text"></i> Email Templates</a>
+                </li>
+                <li>
+                    <a href="#" data-section="content-scheduler"><i class="fas fa-calendar-alt"></i> Content Scheduler</a>
+                </li>
+                <li>
+                    <a href="#" data-section="ai-settings"><i class="fas fa-robot"></i> AI Settings</a>
+                </li>
+                <li>
+                    <a href="#" data-section="system-logs"><i class="fas fa-clipboard-list"></i> System Logs</a>
+                </li>
+                <li>
+                    <a href="#" data-section="api-settings"><i class="fas fa-plug"></i> API Settings</a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fas fa-arrow-left"></i> Back to User Dashboard</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <span class="nav-link"><i class="fas fa-user-shield"></i> Admin</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Admin Dashboard Section -->
+            <div id="admin-dashboard-section" class="content-section active">
+                <div class="container-fluid">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Admin Dashboard</h2>
+                        <div>
+                            <button class="btn btn-sm btn-outline-secondary me-2" id="refresh-stats">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                    <i class="far fa-calendar-alt"></i> <span id="date-range-text">Last 7 Days</span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item date-range" data-range="7" href="#">Last 7 Days</a></li>
+                                    <li><a class="dropdown-item date-range" data-range="30" href="#">Last 30 Days</a></li>
+                                    <li><a class="dropdown-item date-range" data-range="90" href="#">Last 90 Days</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#" id="custom-date-range">Custom Range</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Overview Cards -->
+                    <div class="row mb-4">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card bg-primary text-white h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="text-uppercase">Total Users</h6>
+                                            <h2 class="display-4" id="total-users-count">12</h2>
+                                        </div>
+                                        <i class="fas fa-users fa-3x opacity-50"></i>
+                                    </div>
+                                    <p class="mt-2 mb-0">
+                                        <span class="text-success"><i class="fas fa-arrow-up"></i> 5%</span>
+                                        <small> from last month</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card bg-success text-white h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="text-uppercase">Active Campaigns</h6>
+                                            <h2 class="display-4" id="active-campaigns-count">8</h2>
+                                        </div>
+                                        <i class="fas fa-bullhorn fa-3x opacity-50"></i>
+                                    </div>
+                                    <p class="mt-2 mb-0">
+                                        <span class="text-danger"><i class="fas fa-arrow-down"></i> 2%</span>
+                                        <small> from last month</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card bg-info text-white h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="text-uppercase">Leads Generated</h6>
+                                            <h2 class="display-4" id="leads-count">468</h2>
+                                        </div>
+                                        <i class="fas fa-user-plus fa-3x opacity-50"></i>
+                                    </div>
+                                    <p class="mt-2 mb-0">
+                                        <span class="text-success"><i class="fas fa-arrow-up"></i> 12%</span>
+                                        <small> from last month</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card bg-warning text-white h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="text-uppercase">Conversion Rate</h6>
+                                            <h2 class="display-4" id="conversion-rate">5.7%</h2>
+                                        </div>
+                                        <i class="fas fa-chart-line fa-3x opacity-50"></i>
+                                    </div>
+                                    <p class="mt-2 mb-0">
+                                        <span class="text-success"><i class="fas fa-arrow-up"></i> 0.8%</span>
+                                        <small> from last month</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row mb-4">
+                        <div class="col-lg-8">
+                            <div class="card mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Sales Performance</h5>
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" class="btn btn-outline-secondary active period-btn" data-period="daily">Daily</button>
+                                        <button type="button" class="btn btn-outline-secondary period-btn" data-period="weekly">Weekly</button>
+                                        <button type="button" class="btn btn-outline-secondary period-btn" data-period="monthly">Monthly</button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="sales-chart" height="250"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Lead Sources</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="sources-chart" height="250"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity & AI Performance -->
+                    <div class="row mb-4">
+                        <div class="col-lg-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Recent System Activity</h5>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="list-group list-group-flush" id="system-activity">
+                                        <div class="list-group-item">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-1">New user registered</h6>
+                                                <small class="text-muted">3 mins ago</small>
+                                            </div>
+                                            <p class="mb-1">Sarah Johnson (sarah@example.com)</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-1">Campaign created</h6>
+                                                <small class="text-muted">45 mins ago</small>
+                                            </div>
+                                            <p class="mb-1">Tech Startup Outreach 2023</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-1">API key updated</h6>
+                                                <small class="text-muted">2 hours ago</small>
+                                            </div>
+                                            <p class="mb-1">Apollo.io API configuration</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-1">Email template modified</h6>
+                                                <small class="text-muted">6 hours ago</small>
+                                            </div>
+                                            <p class="mb-1">Follow-up #2 for Marketing Agencies</p>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h6 class="mb-1">System backup completed</h6>
+                                                <small class="text-muted">1 day ago</small>
+                                            </div>
+                                            <p class="mb-1">Full database backup (3.2 GB)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a href="#" class="link-primary" data-section="system-logs">View All Activity</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">AI Performance Metrics</h5>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item px-0">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span>Email Response Rate</span>
+                                                <span class="badge bg-success">92%</span>
+                                            </div>
+                                            <div class="progress mt-2" style="height: 6px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 92%;" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-0">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span>Message Personalization Accuracy</span>
+                                                <span class="badge bg-primary">87%</span>
+                                            </div>
+                                            <div class="progress mt-2" style="height: 6px;">
+                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 87%;" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-0">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span>Lead Qualification Accuracy</span>
+                                                <span class="badge bg-info">78%</span>
+                                            </div>
+                                            <div class="progress mt-2" style="height: 6px;">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 78%;" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-0">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span>Content Generation Quality</span>
+                                                <span class="badge bg-warning">83%</span>
+                                            </div>
+                                            <div class="progress mt-2" style="height: 6px;">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 83%;" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item px-0">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span>API Call Success Rate</span>
+                                                <span class="badge bg-success">95%</span>
+                                            </div>
+                                            <div class="progress mt-2" style="height: 6px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a href="#" class="link-primary" data-section="ai-settings">Adjust AI Settings</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Top Performing Campaigns</h5>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-striped mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Campaign</th>
+                                                    <th>Opens</th>
+                                                    <th>Replies</th>
+                                                    <th>Conv.</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>SaaS Founders</td>
+                                                    <td>78%</td>
+                                                    <td>32%</td>
+                                                    <td>12.4%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Agency Owners</td>
+                                                    <td>72%</td>
+                                                    <td>27%</td>
+                                                    <td>9.6%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tech Startups</td>
+                                                    <td>65%</td>
+                                                    <td>18%</td>
+                                                    <td>7.2%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E-commerce</td>
+                                                    <td>63%</td>
+                                                    <td>17%</td>
+                                                    <td>6.8%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Healthcare</td>
+                                                    <td>57%</td>
+                                                    <td>14%</td>
+                                                    <td>5.2%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a href="#" class="link-primary" data-section="lead-overview">View All Campaigns</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Schedule -->
+                    <div class="card mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Upcoming Content Schedule</h5>
+                            <button class="btn btn-sm btn-primary" id="add-content-btn">
+                                <i class="fas fa-plus"></i> Add Content
+                            </button>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Content Type</th>
+                                            <th>Campaign</th>
+                                            <th>Scheduled Date</th>
+                                            <th>Status</th>
+                                            <th>Creator</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Email Sequence</td>
+                                            <td>Tech Startup Outreach</td>
+                                            <td>Jun 25, 2023</td>
+                                            <td><span class="badge bg-warning">Pending</span></td>
+                                            <td>AI Assistant</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>LinkedIn Post</td>
+                                            <td>Agency Growth 2023</td>
+                                            <td>Jun 26, 2023</td>
+                                            <td><span class="badge bg-success">Approved</span></td>
+                                            <td>AI Assistant</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Follow-up Email</td>
+                                            <td>SaaS Founders</td>
+                                            <td>Jun 27, 2023</td>
+                                            <td><span class="badge bg-info">Drafting</span></td>
+                                            <td>AI Assistant</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sales Call Script</td>
+                                            <td>E-commerce Solutions</td>
+                                            <td>Jun 28, 2023</td>
+                                            <td><span class="badge bg-secondary">In Review</span></td>
+                                            <td>Sarah J.</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Case Study</td>
+                                            <td>Healthcare Tech</td>
+                                            <td>Jun 30, 2023</td>
+                                            <td><span class="badge bg-primary">In Progress</span></td>
+                                            <td>AI Assistant</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#" class="link-primary" data-section="content-scheduler">Manage Content Schedule</a>
+                        </div>
+                    </div>
+
+                    <!-- System Health -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">System Health</h5>
+                                </div>
+                                <div class="card-body p-0">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-0">Server Status</h6>
+                                                    <small class="text-muted">All systems operational</small>
+                                                </div>
+                                                <span class="badge bg-success">Online</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-0">Database</h6>
+                                                    <small class="text-muted">Response time: 18ms</small>
+                                                </div>
+                                                <span class="badge bg-success">Healthy</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-0">API Services</h6>
+                                                    <small class="text-muted">All endpoints responding</small>
+                                                </div>
+                                                <span class="badge bg-success">Operational</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-0">Storage</h6>
+                                                    <small class="text-muted">42% used (8.4 GB free)</small>
+                                                </div>
+                                                <span class="badge bg-success">Healthy</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-0">Last Backup</h6>
+                                                    <small class="text-muted">June 20, 2023 (04:30 AM)</small>
+                                                </div>
+                                                <span class="badge bg-success">Success</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h5 class="mb-0">API Usage</h5>
+                                </div>
+                                <div class="card-body">
+                                    <canvas id="api-usage-chart" height="240"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other sections will be filled by JS -->
+            <div id="user-management-section" class="content-section"></div>
+            <div id="lead-overview-section" class="content-section"></div>
+            <div id="email-templates-section" class="content-section"></div>
+            <div id="content-scheduler-section" class="content-section"></div>
+            <div id="ai-settings-section" class="content-section"></div>
+            <div id="system-logs-section" class="content-section"></div>
+            <div id="api-settings-section" class="content-section"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
